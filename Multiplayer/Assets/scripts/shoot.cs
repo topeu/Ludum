@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityStandardAssets.Characters.ThirdPerson;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class shoot : NetworkBehaviour {

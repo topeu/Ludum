@@ -12,18 +12,20 @@ public class Player : NetworkBehaviour
     [SerializeField] ToggleEvent onToggleRemote;
     [SerializeField] float respawnTime = 5f;
 
-    GameObject mainCamera;
+    //GameObject mainCamera;
 
     void Start()
     {
-        mainCamera = Camera.main.gameObject;
+      
+            GetComponentInChildren<Camera>().enabled = false;
+        //mainCamera = Camera.main.gameObject;
 
         EnablePlayer ();
     }
     void DisablePlayer()
     {
         if (isLocalPlayer)
-            mainCamera.SetActive(true);
+        GetComponentInChildren<Camera>().enabled = false;
 
         onToggleShared.Invoke(false);
 
@@ -36,7 +38,7 @@ public class Player : NetworkBehaviour
     void EnablePlayer()
     {
         if (isLocalPlayer)
-            mainCamera.SetActive(false);
+            GetComponentInChildren<Camera>().enabled = true;
 
         onToggleShared.Invoke(true);
 
