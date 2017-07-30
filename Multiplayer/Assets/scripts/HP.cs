@@ -36,7 +36,7 @@ public class HP : NetworkBehaviour
         return died;
     }
 
-    [ClientRpc]
+    [ClientRpc]    
     void RpcTakeDamage(bool died)
     {
         if (died)
